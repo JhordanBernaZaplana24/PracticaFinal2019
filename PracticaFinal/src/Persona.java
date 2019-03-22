@@ -1,14 +1,15 @@
 public class Persona {
-    private final String nombre;
-    private final String apellidos;
-    private int edad;
+    protected String nombre;
+    protected String apellidos;
+    protected int edad;
 
-    public Persona(String nombre, String apellidos, int edad) {
+    public Persona(String nombre,String apellidos, int edad) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
-
     }
+
+    public Persona() {}
 
     public String getNombre() {
         return nombre;
@@ -20,5 +21,14 @@ public class Persona {
 
     public int getEdad() {
         return edad;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", edad=" + edad +
+                '}';
     }
 }

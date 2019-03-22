@@ -1,6 +1,6 @@
 public enum GeneroMusical {
     BLUES("Blues"),
-    COUNTY("County"),
+    COUNTRY("County"),
     ELECTRO("Electronica"),
     FLAMENCO("Flamenco"),
     FUNK("Funk"),
