@@ -3,6 +3,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class PanelDeGrupo extends JPanel {
     public static final Font FUENTE_ARIAL_GRANDE = new Font("Arial", Font.ITALIC, 18);
     JTextField nombreGrupo=new JTextField(10);

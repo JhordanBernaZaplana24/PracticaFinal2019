@@ -3,6 +3,8 @@ public class Persona {
     protected String apellidos;
     protected int edad;
 
+
+
     public Persona(String nombre,String apellidos, int edad) {
         this.nombre = nombre;
         this.apellidos = apellidos;

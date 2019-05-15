@@ -16,6 +16,7 @@ public class Integrante extends Persona{
     public String getFuncionEnElGrupo() {
         return funcionEnElGrupo;
     }
+
     public String infoDelIntegrante(){
         return "Nombre Artistico: "+nombreArtistico+"\n"+
                 "En el grupo, él es: "+funcionEnElGrupo+"\n";
