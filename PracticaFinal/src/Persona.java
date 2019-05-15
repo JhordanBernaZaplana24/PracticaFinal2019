@@ -31,4 +31,9 @@ public class Persona {
                 ", edad=" + edad +
                 '}';
     }
+    public String infoPersona(){
+        return "Nombre: "+nombre+"\n"+
+                "Apellidos: "+apellidos+"\n"+
+                "Edad: "+edad+"\n";
+    }
 }
