@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -6,7 +5,7 @@ import java.util.Objects;
 
 public class GrupoMusica {
     private String nombreGrupo;
-    List<Integrante> listaIntegrante;
+    List<Duo> listaIntegranteDuo;
     private int numeroIntegrantes;
     private int numeroDiscosPublicados;
     private GeneroMusical genero;
@@ -24,6 +23,8 @@ public class GrupoMusica {
             throw new IllegalArgumentException("Tiene que haber algun integrante en el grupo.");
         }
 
+    }
+    public GrupoMusica() {
     }
 
 
@@ -48,12 +49,12 @@ public class GrupoMusica {
         this.nombreGrupo = nombreGrupo;
     }
 
-    public List<Integrante> getListaIntegrante() {
-        return listaIntegrante;
+    public List<Duo> getListaIntegrante() {
+        return listaIntegranteDuo;
     }
 
-    public void setListaIntegrante(List<Integrante> listaIntegrante) {
-        this.listaIntegrante = listaIntegrante;
+    public void setListaIntegrante(List<Duo> listaIntegrante) {
+        this.listaIntegranteDuo = listaIntegrante;
     }
 
     public int getNumeroIntegrantes() {
@@ -90,8 +91,8 @@ public class GrupoMusica {
     }
     public String info() {
         String salida = "";
-        salida += this.getGenero() + " - " + this.getNombreGrupo() + "Son " + this.getListaIntegrante() +
-                " los intregrantes del grupo. Tienen" + this.getNumeroDiscosPublicados() + "discos publicados.";
+        salida += this.getGenero() + " - " + this.getNombreGrupo() + "Son " + this.getNumeroIntegrantes() +
+                " los intregrantes del grupo. Tienen " + this.getNumeroDiscosPublicados() + " discos publicados.";
         return salida;
     }
 
