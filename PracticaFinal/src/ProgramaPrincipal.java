@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,13 @@ public class ProgramaPrincipal extends JPanel {
         usuario.setEditable(true);
         usuario.setHorizontalAlignment(JTextField.LEFT);
 
+        inicio.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
         registrarse.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,13 +47,21 @@ public class ProgramaPrincipal extends JPanel {
                 JButton botonSinMas = new JButton("<---------   :) ");
                 registro.setLayout(new GridLayout(0,2));
                 JLabel nombre = new JLabel("Nombre : ");
+                nombre.setHorizontalAlignment(JTextField.CENTER);
                 JTextField campoNombre = new JTextField(30);
+                campoNombre.setHorizontalAlignment(JTextField.CENTER);
                 JLabel apellidos = new JLabel("Apellidos : ");
+                apellidos.setHorizontalAlignment(JTextField.CENTER);
                 JTextField campoApellidos = new JTextField(30);
+                campoApellidos.setHorizontalAlignment(JTextField.CENTER);
                 JLabel correo = new JLabel("Correo electronico : ");
+                correo.setHorizontalAlignment(JTextField.CENTER);
                 JTextField campoCorreo = new JTextField(30);
+                campoCorreo.setHorizontalAlignment(JTextField.CENTER);
                 JLabel fechaNacimiento = new JLabel("Fecha de nacimiento(dd/mm/yy) : ");
+                fechaNacimiento.setHorizontalAlignment(JTextField.CENTER);
                 JTextField campoFechaNacimiento = new JTextField(30);
+                campoFechaNacimiento.setHorizontalAlignment(JTextField.CENTER);
                 registro.setVisible(true);
                 registro.add(nombre);
                 registro.add(campoNombre);
@@ -60,11 +76,21 @@ public class ProgramaPrincipal extends JPanel {
                 registro.setLocationRelativeTo(null);
                 registro.setSize(400,300);
                 registro.setResizable(false);
-//                String [] usuario = new String[4];
-//                usuario[0] =
-//                usuario[1]
-//                usuario[2]
-//                usuario[3]
+                    botoncrearCuenta.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+
+                                try{
+                                    BufferedWriter bw = new BufferedWriter(new FileWriter(new File("Usuarios.txt"),true));
+                                    bw.write((campoNombre.getText()+" "+campoApellidos.getText()+" "+campoCorreo.getText()+" "+campoFechaNacimiento.getText()+"\n"));
+                                    bw.close();{
+                                    }
+                                    } catch (IOException e1) {
+                                    e1.printStackTrace();
+                                }
+                                registro.dispose();
+                            }
+                    });
             }
         });
     }
