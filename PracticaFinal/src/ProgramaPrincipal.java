@@ -11,7 +11,7 @@ public class ProgramaPrincipal extends JPanel {
         JFrame miFrame=new JFrame("Inicio.");
         miFrame.setLayout(new FlowLayout());
         JTextField usuario= new JTextField(20);
-        JLabel textoInicial = new JLabel("Pasa la tarjeta por el lector.");
+        JLabel textoInicial = new JLabel("Escriba su nombre.");
         JButton registrarse =new JButton("¿No tienes cuenta? Registrate.");
         JButton inicio =new JButton("Inicia sesión.");
 
@@ -31,11 +31,22 @@ public class ProgramaPrincipal extends JPanel {
         usuario.setText("");
         usuario.setEditable(true);
         usuario.setHorizontalAlignment(JTextField.LEFT);
-
+    //AÑADIR FUNCION BOTON INICIO
         inicio.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+            JFrame panelPrincipalGrupos = new JFrame("Elija la opción que desee.");
+            panelPrincipalGrupos.setLayout(new GridLayout(0,2));
+            JButton botonAnyadir = new JButton("Añadir grupo");
+            JButton botonEliminar = new JButton("Eliminar grupo");
+            JButton botonMostrar = new JButton("Mostrar los grupos añadidos");
+            panelPrincipalGrupos.setVisible(true);
+            panelPrincipalGrupos.add(botonAnyadir);
+            panelPrincipalGrupos.add(botonEliminar);
+            panelPrincipalGrupos.add(botonMostrar);
+            panelPrincipalGrupos.setLocationRelativeTo(null);
+            panelPrincipalGrupos.setSize(400,300);
+            panelPrincipalGrupos.setResizable(false);
             }
         });
 
