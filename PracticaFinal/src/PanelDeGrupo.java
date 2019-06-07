@@ -9,12 +9,13 @@ import java.util.List;
 
 
 public class PanelDeGrupo extends JPanel {
+    private Usuario usuarioActual;
     JTextField nombreGrupo=new JTextField(10);
     JTextField numeroDiscosPublicados=new JTextField(10);
     JTextField numeroIntegrantes=new JTextField(10);
     JComboBox<GeneroMusical> generoMusicalJComboBox = new JComboBox<GeneroMusical>(GeneroMusical.values());
 
-    PanelDeGrupo(){
+    PanelDeGrupo(Usuario usuarioActual){
         inicializa();
     }
     PanelDeGrupo(GrupoMusica miGrupo){
@@ -53,7 +54,6 @@ public class PanelDeGrupo extends JPanel {
         ponerVisible.add(new JLabel("Numero de discos: "));
         ponerVisible.add(numeroDiscosPublicados);
         numeroDiscosPublicados.setCaretPosition(0);
-        ponerVisible.add(new JLabel("Genero: "));
 
         for (Component c :
                 ponerVisible) {
