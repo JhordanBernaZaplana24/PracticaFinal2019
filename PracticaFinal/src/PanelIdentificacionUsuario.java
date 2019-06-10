@@ -2,9 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class PanelIdentificacionUsuario extends JPanel {
+public class PanelIdentificacionUsuario extends JDialog {
+    JDialog panelIdentificacionUsuario;
     protected JTextField numeroUsuario =new JTextField(20);
     PanelIdentificacionUsuario(){
+        panelIdentificacionUsuario=this;
         setLayout(new BorderLayout());
         add(new JLabel("Introduzca su número de identificación o pase su tarjeta."),BorderLayout.NORTH);
         add(numeroUsuario,BorderLayout.SOUTH);
@@ -30,3 +32,4 @@ public class PanelIdentificacionUsuario extends JPanel {
         return numeroUsuario.getText();
     }
 }
+//

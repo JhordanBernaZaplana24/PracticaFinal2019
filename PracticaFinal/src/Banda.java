@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
 
 public class Banda extends GrupoMusica{
@@ -8,7 +9,7 @@ public class Banda extends GrupoMusica{
 
 
 
-    public Banda(String nombreBanda, String nombreCantante, int numeroIntegrantes) {
+    public Banda(String nombreBanda,int numeroIntegrantes ,String nombreCantante) {
         super();
         this.nombreBanda = nombreBanda;
         this.nombreCantante = nombreCantante;
@@ -36,6 +37,12 @@ public class Banda extends GrupoMusica{
             System.out.println(s);
         }
         return nombreMusicos;
+    }
+    public String info(){
+        String informacion="BANDA MUSICAL\n";
+        informacion += super.info();
+        informacion+="Nombre Banda: "+this.nombreBanda+" V\n";
+        return informacion;
     }
 
     @Override

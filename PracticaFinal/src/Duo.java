@@ -4,7 +4,7 @@ public class Duo extends GrupoMusica{
     private String nombreArtisticoCantante2;
 
     public Duo (String nombreArtisticoCantante1, String nombreArtisticoCantante2 , String nombreDuo) {
-        super();
+        super(nombreArtisticoCantante1,nombreArtisticoCantante2,nombreDuo);
         this.nombreArtisticoCantante1 = nombreArtisticoCantante1;
         this.nombreArtisticoCantante2 = nombreArtisticoCantante2;
         this.nombreDuo = nombreDuo;
@@ -35,10 +35,11 @@ public class Duo extends GrupoMusica{
         this.nombreArtisticoCantante2 = nombreArtisticoCantante2;
     }
 
-    public String infoDeIntegrantes(){
-        return "Nombre del grupo: "+nombreDuo+"\n"+
+    public String info(){
+        String informacion= "Nombre del grupo: "+nombreDuo+"\n"+
                 "Nombre artistico del primer cantante: "+nombreArtisticoCantante1+"\n"+
                 "Nombre artistico del segundo cantante: "+nombreArtisticoCantante2+"\n";
+        return informacion;
 
     }
 

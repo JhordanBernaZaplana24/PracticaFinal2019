@@ -5,12 +5,11 @@ import java.util.Objects;
 
 public class GrupoMusica {
     private String nombreGrupo;
-    List<Duo> listaIntegranteDuo;
     private int numeroIntegrantes;
     private int numeroDiscosPublicados;
     private GeneroMusical genero;
 
-    public GrupoMusica(String nombreGrupo, int numeroDiscosPublicados, int numeroIntegrantes) {
+    public GrupoMusica() {
         this.nombreGrupo = nombreGrupo;
         this.numeroDiscosPublicados = numeroDiscosPublicados;
         if (nombreGrupo.equals("")) {
@@ -19,12 +18,9 @@ public class GrupoMusica {
         if (numeroDiscosPublicados <= 0) {
             throw new IllegalArgumentException("Tiene que haber algun disco publicado.");
         }
-        if (numeroIntegrantes <= 0) {
-            throw new IllegalArgumentException("Tiene que haber algun integrante en el grupo.");
-        }
 
     }
-    public GrupoMusica() {
+    public GrupoMusica(String nombreBanda, String nombreCantante, String numeroIntegrantes) {
     }
 
 
@@ -47,14 +43,6 @@ public class GrupoMusica {
 
     public void setNombreGrupo(String nombreGrupo) {
         this.nombreGrupo = nombreGrupo;
-    }
-
-    public List<Duo> getListaIntegrante() {
-        return listaIntegranteDuo;
-    }
-
-    public void setListaIntegrante(List<Duo> listaIntegrante) {
-        this.listaIntegranteDuo = listaIntegrante;
     }
 
     public int getNumeroIntegrantes() {
